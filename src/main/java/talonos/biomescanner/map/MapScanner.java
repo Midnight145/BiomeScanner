@@ -178,10 +178,6 @@ public class MapScanner {
 
     @SubscribeEvent
     public void onWorldTick(TickEvent.WorldTickEvent event) {
-        // if (!this.failedInitializedChunkloading && !this.hasInitializedChunkloading
-        // && this.world != null) {
-        // this.initalizeChunkloading();
-        // }
         if (BiomeScanner.disableEverything || event.phase == TickEvent.Phase.END) {
             return;
         }
@@ -195,9 +191,6 @@ public class MapScanner {
             }
 
             if (this.lastScannedChunk != -1 && !event.world.isRemote) {
-                // if (!this.isChunkloaded()) {
-                // this.loadChunk();
-                // }
                 this.scanSomeChunks(event.world);
             }
         }

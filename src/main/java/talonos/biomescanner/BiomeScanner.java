@@ -28,6 +28,7 @@ import talonos.biomescanner.gui.GuiHandlerBadgePrinter;
 import talonos.biomescanner.map.BiomeMapColors;
 import talonos.biomescanner.map.MapScanner;
 import talonos.biomescanner.map.Zone;
+import talonos.biomescanner.network.BiomeScannerNetwork;
 
 @Mod(
     modid = BiomeScanner.MODID,
@@ -113,6 +114,7 @@ public class BiomeScanner {
 
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
+        BiomeScannerNetwork.init();
         FMLCommonHandler.instance()
             .bus()
             .register(MapScanner.instance);
